@@ -1,0 +1,20 @@
+<mat-form-field appearance="fill">
+  <mat-label>People</mat-label>
+  <mat-select [formControl]="selectedList" multiple>
+    <mat-option *ngFor="let person of people" [value]="person">{{person.name}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<button (click)="calculate()" color="primary" mat-flat-button>Calculate</button>
+
+<div class="info-block">
+  <span>Places to go:</span>
+  <ul>
+    <li *ngFor="let place of bestPlaces"> {{place}}</li>
+  </ul>
+  <span>Not the best places:</span>
+  <ul>
+    <li *ngFor="let argue of argues">{{argue}}</li>
+  </ul>
+</div>
+
